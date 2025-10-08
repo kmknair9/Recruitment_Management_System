@@ -1,0 +1,14 @@
+.formcontainer{
+  display: flex;
+  justify-self: center;
+}
+
+a{
+  text-decoration: none;
+  color:blue;
+}
+.formcontent2{
+  display:flex;
+  flex-direction: column;
+  justify-self: center;
+}

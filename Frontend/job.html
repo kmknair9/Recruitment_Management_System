@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="candidate.css">
+  <title>Jobs Page</title>
+</head>
+<body>
+  <p>JOBS Page</p>
+  <button onclick="getAllJobs()">JOBS</button>
+  <button onclick="formContent1()">Job Listing Form</button>
+  <div id="displayjobslist" hidden></div>
+  <div class="formcontainer">
+    <form id="formcontent1" hidden>
+      <div>
+        <label>Job ID</label>
+        <input id="jobId" required>
+      </div>
+      <div>
+        <label>Title</label>
+        <input id="title" required>
+      </div>
+      <div>
+        <label>Description</label>
+        <input id="description" required>
+      </div>
+      <div>
+        <label>Required Skills</label>
+        <input id="requiredSkills" required>
+      </div>
+      <div>
+        <label>Recruiter ID</label>
+        <input id="recruiterId">
+      </div>
+      <div>
+        <button id="submitbutton" hidden>Submit</button>
+      </div>
+      <div>
+        <button id="updatebutton" hidden>Update</button>
+      </div>
+    </form>
+  </div>
+<script src="./jobpage.js"></script>
+</body>
+</html>

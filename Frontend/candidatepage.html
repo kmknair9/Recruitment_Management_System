@@ -1,67 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Candidate Management System</title>
-  <link rel="stylesheet" href="candidate.css">
-</head>
-<body>
-  <p>Candidate Page</p>
-
-  <button onclick="getAllCandidates()">Candidate List</button>
-
-  <button onclick="formContent()">Candidate Form</button>
-
-  <a href="./job.html" target="_blank"><button onclick="">Jobs</button></a>
-
-  <div id="displaycandidateslist">
-    
-  </div>
-
-  <div class="formcontainer">
-    <form id="formcontent" hidden>
-      <div class="formcontentscontainer">
-        <div class="idcontainer">
-          <label>Candidate Id</label>
-          <input id=candidateId required>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="candidate.css">
+    <title>Candidate Management System</title>
+  </head>
+  <body>
+    <p>Candidate Page</p>
+    <p id="crudstatus" hidden></p>
+    <button id="candidatelistbutton" onclick="getAllCandidates()">Candidate List</button>
+    <button id="candidateformbutton" onclick="formContent()">Candidate Form</button>
+    <a href="job.html"><button onclick="">Jobs</button></a>
+    <button onclick="LogOut()">Log Out</button>
+    <div id="displaycandidateslist">
+    </div>
+    <div class="formcontainer">
+      <form id="formcontent" hidden>
+        <div class="formcontentscontainer">
+          <div class="namecontainer">
+            <label>Name</label>
+            <input  id="name" required>
+          </div>
+          <div class="emailcontainer">
+            <label>Email</label>
+            <input type="email" id="email" required>
+          </div>
+          <div class="phonenumbercontainer">
+            <label>Phone Number</label>
+            <input id="phoneNumber" required>
+          </div>
+          <div class="currentstatuscontainer">
+            <label>Current Status</label>
+            <select id="currentStatus">
+              <option value="">Select</option>
+              <option value="Applied">Applied</option>
+              <option value="Interviewing">Interviewing</option>
+            </select>
+          </div> 
+          <div class="resumelinkcontainer">
+            <label>Resume Link</label>
+            <input id="resumeLink" required>
+          </div>
+          <div class="submitbuttoncontainer">
+            <button type="submit" id="submitbutton" hidden>Submit</button>
+          </div>
+          <div class="updatebuttoncontainer">
+            <button id="updatebutton" hidden>Update</button>
+          </div>
         </div>
-         <div class="namecontainer">
-          <label>Name</label>
-          <input  id="name" required>
-        </div>
-        <div class="emailcontainer">
-          <label>Email</label>
-          <input type="email" id="email" required>
-        </div>
-        <div class="phonenumbercontainer">
-          <label>Phone Number</label>
-          <input id="phoneNumber" required>
-        </div>
-        <div class="currentstatuscontainer">
-          <label>Current Status</label>
-          <select id="currentStatus" required>
-            <option value="">Select</option>
-            <option value="Applied">Applied</option>
-            <option value="Interviewing">Interviewing</option>
-          </select>
-        </div> 
-        <div class="resumelinkcontainer">
-          <label>Resume Link</label>
-          <input id="resumeLink" required>
-        </div>
-        <div class="submitbuttoncontainer">
-          <button type="submit" id="submitbutton" hidden>Submit</button>
-        </div>
-        <div class="updatebuttoncontainer">
-          <button id="updatebutton" hidden>Update</button>
-        </div>
-      </div>
-    </form>
-  </div>
-
-  <div id="candidates" hidden>
-  </div>
-<script src="candidatepage.js"></script>
-</body>
+      </form>
+    </div>
+    <div id="candidates" hidden>
+    </div>
+  <script src="candidatepage.js"></script>
+  </body>
 </html>

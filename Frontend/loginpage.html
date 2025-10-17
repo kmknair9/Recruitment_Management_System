@@ -1,27 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="candidate.css">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="candidate.css">
   <title>LOGIN PAGE</title>
-</head>
-<body>
-  <div class="formcontent2">
-    <p>Advanced Role Based Access Control</p>
+  </head>
+  <body>
+    <div class="formcontent2container">
       <div>
-        <label>Email</label>
-        <input type="email" id="email">
+        <p class="loginpageheading">Advanced Role Based Access Control</p>
       </div>
+      <form id="formcontent2">
+        <div id="emailcontainer">
+          <label>Email</label>
+          <input type="email" id="email" required>
+        </div>
+        <br/>
+        <div id="passwordcontainer">
+          <label>Password</label>
+          <input id="password" required>
+        </div>
+        <br/>
+        <div id="loginbutton">
+          <button type="submit">Login</button>
+        </div> 
+      </form>
       <br/>
       <div>
-        <label>Password</label>
-        <input id="password">
+        <p id="signupcontent" hidden>Invalid Credentials!!!! <br/> If you don't have an account then Click Below</p>
+        <button id="signupbutton" hidden>Sign Up</button>
       </div>
-      <br/>
-      <div>
-        <button type="submit">Login</button>
+      <div id="signuparea">
+        <div id="rolecontainer" hidden>
+          <label>Role</label>
+          <select id="role">
+            <option value="Candidate" default>Candidate</option>
+            <option value="Admin">Admin</option>
+            <option value="Recruiter">Recruiter</option>
+            <option value="Hiring_Manager">Hiring Manager</option>
+          </select>
+        </div>
+        <br/>
+        <div>
+        <button id="signinbutton" onclick="SignUp()" hidden>Sign In</button>
+        </div>
       </div>
-  </div>
-</body>
+    </div>
+  <script src="loginpage.js"></script>
+  </body>
 </html>

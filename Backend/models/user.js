@@ -1,8 +1,8 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 
 const userSchema = new mongoose.Schema({
-  email:{
+  email: {
     type: String,
     required: true,
     unique: true
@@ -13,23 +13,22 @@ const userSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    enum: ['Admin','Recruiter','HiringManager'],
+    enum: ['Candidate','Admin','Recruiter','Hiring_Manager'],
     required: true
   }
-},{
-  timestamps: true
-});
+  }, {
+    timestamps: true
+})
 
 userSchema.methods.setPassword = async function (password) {
- const saltRounds = 12;
- this.passwordHash = await bcrypt.hash(password, saltRounds);
+  const saltRounds = 12;
+  this.passwordHash = await bcrypt.hash(password, saltRounds);
 }
 
 userSchema.methods.validatePassword = async function (password) {
   return bcrypt.compare(password, this.passwordHash);
 }
 
-
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model( 'User', userSchema );
 
 export default User;

@@ -7,7 +7,7 @@ a{
   text-decoration: none;
   color:blue;
 }
-.formcontent2{
+.formcontent2container{
   display:flex;
   flex-direction: column;
   justify-self: center;

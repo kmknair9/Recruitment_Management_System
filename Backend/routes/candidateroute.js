@@ -1,5 +1,5 @@
 import express from "express";
-import { getCandidates, getSingleCandidate, createCandidates, updateCandidate, deleteCandidate, getJobs, getSingleJob, createJob, updateJob, deleteJob } from "../controllers/controller.js";
+import { getCandidates, getSingleCandidate, createCandidates, updateCandidate, deleteCandidate } from "../controllers/candidatecontroller.js";
 
 const router = express.Router();
 

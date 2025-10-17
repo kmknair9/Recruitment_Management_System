@@ -1,10 +1,15 @@
 import mongoose from "mongoose";
 
 const candidateSchema = new mongoose.Schema({
-  candidateId:{
+  userId:{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  },
+  type:{
     type:String,
-    required:true,
-    unique:true
+    enum: ['others','candidate'],
+    required: true
   },
   name:{
     type:String,
@@ -20,15 +25,14 @@ const candidateSchema = new mongoose.Schema({
   },
   currentStatus:{
     type:String,
-    required:true,
-    enum:["Applied","Interviewing"]
+    enum:[" ","Applied","Interviewing"]
   },
   resumeLink:{
     type:String,
     required:true
   }
-}, {
-  timestamps:true
+  }, {
+    timestamps:true
 });
 
 const Candidate = mongoose.model('Candidate',candidateSchema);
